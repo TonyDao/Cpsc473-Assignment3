@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment3</title>
+        <meta charset="UTF-8">        
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <!-- This form is base of semantic ui login form. http://semantic-ui.com/examples/login.html -->
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h1>Assignment 3</h1>
+                <form class="ui large form">
+                    <div class="ui stacked segment">
+                        <div class="result"></div>
+                        <div class="field">
+                            <label>Functions</label>
+                            <select class="ui search dropdown" id=functions>
+                                <option value="average">Average</option>
+                                <option value="arrayLargestNum">Find Largest Number</option>
+                                <option value="arrayContainOneEven">Check Array Contain Even Number</option>
+                                <option value="arrayContainAllEven">Check Array Contain All Even Number</option>
+                                <option value="arrayContainAString">Check Array Contain A String Element</option>
+                                <option value="arrayContainNTimes">Check Array Contain N String Element</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Array</label>
+                            <input type="text" name="array" placeholder="Array" id="array">
+                        </div>
+                        <div class="field transition hidden">
+                            <label>String Element</label>
+                            <input type="text" name="element" placeholder="Element" id="element">
+                        </div>
+                        <div class="field transition hidden">
+                            <label>Amount</label>
+                            <input type="text" name="amount" placeholder="Amount of Element in array" id="amount">
+                        </div>
+                        <div class="ui fluid blue animated submit button">
+                            <div class="visible content">Submit</div>
+                            <div class="hidden content">
+                                <i class="right arrow icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script src="semantic/dist/semantic.min.js"></script>   
+        <script src="javascript/home.js"></script>
+    </body>
+</html>

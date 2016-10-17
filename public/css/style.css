@@ -1,0 +1,14 @@
+body {
+	background-color: #DADADA;
+}
+body > .grid {
+	height: 100%;
+}
+
+.form label {
+	text-align: left;
+}
+
+.column {
+	max-width: 450px;
+}
