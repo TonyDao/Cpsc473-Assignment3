@@ -34,14 +34,23 @@ var main = function() {
             array = $('#array').val().split(','),
             element = $('#element').val(),
             amount = $('#amount').val(),
-            $result = $('<div class="ui">');
+            $result = $('<div class="ui">'),
+            jsonObj,
+            data;
 
-        var url = 'http://localhost:3000/' + funcName;
+        var url = '/' + funcName;
 
-        //send post message
-        $.post(url, 
-            {array: array, element:element, amount:amount}, 
-            function (data) {
+        var object = {array: array, element:element, amount:amount},
+            jsonData = JSON.stringify(object);
+
+        $.ajax({
+            type:'POST',
+            url: url,
+            dataType: 'json',
+            data: jsonData,
+            success: function(jsonResult){
+                data = jsonResult.result.toString();
+                
                 //check if result or error message
                 if(data.indexOf('Error') >= 0){
                     console.log('get in error');
@@ -57,8 +66,11 @@ var main = function() {
                 setTimeout(function() {
                     $('.ui.message').transition('fade down', 300);
                 },3000);
+            },
+            error: function(){
+                console.log('Error Post Largest');
             }
-        );        
+        });        
     });
 
      $('select.dropdown').change(function(){
